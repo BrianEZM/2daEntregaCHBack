@@ -10,7 +10,7 @@
     "start": "node src/server.js"
   },
   "keywords": [],
-  "author": "Michael Viloria",
+  "author": "Brian Zapata",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.19"

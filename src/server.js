@@ -5,12 +5,21 @@ const app = express();
 
 import mongoose from "mongoose";
 
-const URL_MONGOOSE = "mongodb://localhost:27017/ecommerce";
-mongoose.connect(URL_MONGOOSE, {
-	useNewUrlParser: true,
-	useUnifiedTopology: true,
-});
-console.log("Base de datos conectada");
+// const URL_MONGOOSE = "mongodb://localhost:27017/ecommerce";
+async function connect(){
+	try {
+		const URL_MONGOOSE = "mongodb+srv://brianezm1:brian123@cluster2daentregach.foe3uq8.mongodb.net/?retryWrites=true&w=majority";
+		await mongoose.connect(URL_MONGOOSE, {
+		useNewUrlParser: true,
+		useUnifiedTopology: true,
+		});
+		console.log("Base de datos conectada");
+	} catch (error) {
+		console.log(error);
+	}
+}
+
+connect()
 
 // <---------- Routes ---------->
 
