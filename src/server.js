@@ -1,5 +1,6 @@
 import express from "express";
 const app = express();
+import fs from "fs";
 
 // <---------- Mongoose ---------->
 
@@ -16,11 +17,13 @@ const app = express();
 
 import admin from "firebase-admin";
 
-import serviceAccount from "./proyecto-backend-ef2b4-firebase-adminsdk-rm655-9ebea6f677.json";
+const serviceAccount = JSON.parse(fs.readFileSync("./coderbackend2022-firebase-adminsdk-20xa4-7966065032.json", 'utf-8'))
 
 admin.initializeApp({
 	credential: admin.credential.cert(serviceAccount),
 });
+
+console.log("Firebase conectado!");
 
 // <---------- Routes ---------->
 
