@@ -12,6 +12,11 @@ import { cartsModel } from "../models/carts.schema.js";
 import CartMongoDB from "../dao/cartMongoDB.js";
 const cart = new CartMongoDB(cartsModel);
 
+// <------ Firebase ------>
+
+// import CartFirebase from "../dao/cartFirebase.js";
+// const cart = new CartFirebase("carts");
+
 // <------ Queries ------>
 
 routerCart.use(express.json());

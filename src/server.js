@@ -3,23 +3,24 @@ const app = express();
 
 // <---------- Mongoose ---------->
 
-import mongoose from "mongoose";
+// import mongoose from "mongoose";
 
 // const URL_MONGOOSE = "mongodb://localhost:27017/ecommerce";
-async function connect(){
-	try {
-		const URL_MONGOOSE = "mongodb+srv://brianezm1:brian123@cluster2daentregach.foe3uq8.mongodb.net/?retryWrites=true&w=majority";
-		await mongoose.connect(URL_MONGOOSE, {
-		useNewUrlParser: true,
-		useUnifiedTopology: true,
-		});
-		console.log("Base de datos conectada");
-	} catch (error) {
-		console.log(error);
-	}
-}
+// mongoose.connect(URL_MONGOOSE, {
+// 	useNewUrlParser: true,
+// 	useUnifiedTopology: true,
+// });
+// console.log("Base de datos conectada");
 
-connect()
+// <---------- Firebase ---------->
+
+import admin from "firebase-admin";
+
+import serviceAccount from "./proyecto-backend-ef2b4-firebase-adminsdk-rm655-9ebea6f677.json";
+
+admin.initializeApp({
+	credential: admin.credential.cert(serviceAccount),
+});
 
 // <---------- Routes ---------->
 
@@ -47,7 +48,7 @@ app.use(error404);
 // <---------- Servidor ---------->
 
 app.get("/", (req, res) => {
-	res.send("<h1>Segunda entrega del proyecto</h1>");
+	res.send("<h1>Primer entrega del proyecto</h1>");
 });
 
 // <---------- Servidor ---------->

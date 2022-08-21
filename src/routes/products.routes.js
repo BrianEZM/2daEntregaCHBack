@@ -12,6 +12,11 @@ import { productsModel } from "../models/products.schema.js";
 import ProductMongoDB from "../dao/productMongoDB.js";
 const product = new ProductMongoDB(productsModel);
 
+// <------ Firebase ------>
+
+// import ProductFirebase from "../dao/productFirebase.js";
+// const product = new ProductFirebase("products");
+
 // <------ Controllers ------>
 
 import controller from "../controllers/admin.controller.js";
